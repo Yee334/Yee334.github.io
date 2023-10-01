@@ -189,114 +189,13 @@
 <td>这个作业的目标</td>
 <td>pytorch 的一些基础操作，深度学习，浅层神经网络</td>
 </tr>
-<tr>
-<td>姓名和学号</td>
-<td>王菲21020007091</td>
-</tr>
 </tbody></table>
 <h1 id="一、视频学习"><a href="#一、视频学习" class="headerlink" title="一、视频学习"></a>一、视频学习</h1><h2 id="1-1-绪论："><a href="#1-1-绪论：" class="headerlink" title="1.1 绪论："></a>1.1 绪论：</h2><p>从专家系统到机器学习，从传统机器学习到深度学习，深度学习的能与不能 </p>
-<h2 id="1-2-深度学习概述："><a href="#1-2-深度学习概述：" class="headerlink" title="1.2 深度学习概述："></a>1.2 深度学习概述：</h2><p>浅层神经网络，生物神经元到单层感知器，多层感知 器，反向传播和梯度消失。神经网络到深度学习：逐层预训练，自编码器和 受限玻尔兹曼机</p>
-<h1 id="二、代码练习"><a href="#二、代码练习" class="headerlink" title="二、代码练习"></a>二、代码练习</h1><h2 id="2-1、pytorch基础练习"><a href="#2-1、pytorch基础练习" class="headerlink" title="2.1、pytorch基础练习"></a>2.1、pytorch基础练习</h2><h3 id="2-1-1-定义数据"><a href="#2-1-1-定义数据" class="headerlink" title="2.1.1 定义数据"></a>2.1.1 定义数据</h3><p><strong>用torch.Tensor 定义数据：</strong></p>
-<p>1、一个数</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001154249098.png" alt="image-20231001154249098"></p>
-<p>2、一维数组</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001154720715.png" alt="image-20231001154720715"></p>
-<p>3、二维数组</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001154741901.png" alt="image-20231001154741901"></p>
-<p>4、张量</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001154759864.png" alt="image-20231001154759864"></p>
-<p><strong>创建Tensor的其他方法：</strong></p>
-<p>1、创建一个空张量</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001154903099.png" alt="image-20231001154903099"></p>
-<p>2、创建一个随机初始化的张量</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001154923650.png" alt="image-20231001154923650"></p>
-<p>3、创建一个全0的张量，里面的数据类型为 long</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001154935549.png" alt="image-20231001154935549"></p>
-<p>4、基于现有的tensor，创建一个新tensor，从而可以利用原有的tensor的dtype，device，size之类的属性信息</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001154952765.png" alt="image-20231001154952765"></p>
-<p>5、利用原来的tensor的大小，但是重新定义了dtype</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001155009436.png" alt="image-20231001155009436"></p>
-<h3 id="2-1-2定义操作"><a href="#2-1-2定义操作" class="headerlink" title="2.1.2定义操作"></a>2.1.2定义操作</h3><p>1、创建一个 2x4 的tensor</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001155518435.png" alt="image-20231001155518435"></p>
-<p>2、返回 m 中元素的数量</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001155529997.png" alt="image-20231001155529997"></p>
-<p>3、返回第0行，第2列的数</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001155541809.png" alt="image-20231001155541809"></p>
-<p>4、返回第1列的全部元素</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001155553623.png" alt="image-20231001155553623"></p>
-<p>5、返回第0行的全部元素</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001155605091.png" alt="image-20231001155605091"></p>
-<p>6、Create tensor of numbers from 1 to 5（生成从1to4的数）</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001155615893.png" alt="image-20231001155615893"></p>
-<p>7、Scalar product（标量积）</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001162052475.png" alt="image-20231001162052475"></p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001162424210.png" alt="image-20231001162424210"></p>
-<p>8、Calculated by 1<em>2 + 2</em>5 + 3<em>3 + 4</em>7</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001162455802.png" alt="image-20231001162455802"></p>
-<p>9、Add a random tensor of size 2x4 to m</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001155631826.png" alt="image-20231001155631826"></p>
-<p>10、转置，由 2x4 变为 4x2；或者用transpose也可以</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001155959122.png" alt="image-20231001155959122"></p>
-<p>11、returns a 1D tensor of steps equally spaced points between start&#x3D;3, end&#x3D;8 and steps&#x3D;20在这里插入图片描述</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001160013630.png" alt="image-20231001160013630"></p>
-<p>12、下面是生成 1000 个随机数，并按照 100 个 bin 统计直方图在这里插入图片描述</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001160043486.png" alt="image-20231001160043486"></p>
-<p>13、当数据非常非常多的时候，正态分布会体现的非常明显</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001160056821.png" alt="image-20231001160056821"></p>
-<p>14、创建两个 1x4 的tensor。在 0 方向拼接 （即在 Y 方各上拼接）, 会得到 2x4 的矩阵</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001160107377.png" alt="image-20231001160107377"></p>
-<p>15、在 1 方向拼接 （即在 X 方各上拼接）, 会得到 1x8 的矩阵</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001160114630.png" alt="image-20231001160114630"></p>
-<h3 id="2-1-3实验体会"><a href="#2-1-3实验体会" class="headerlink" title="2.1.3实验体会"></a>2.1.3实验体会</h3><p>1、学习了pytorch 的一些基础操作，但是由于是按照操作手册做的，对于其中一些函数的具体调用如参数传递和返回值的类型等等还有待进一步深入学习</p>
-<p>2、在2.7运行代码时发现了报错，查阅csdn相关博客发现是数据类型出错，torch.arange()产生的数据类型为Long型，而torch.Tensor()产生的为float型。<br>解决方法参考了：<a target="_blank" rel="noopener" href="http://t.csdn.cn/SE1hf">http://t.csdn.cn/SE1hf</a><br>经过查找之后发现可以通过float()函数将v中的数据从Long转为float型再与m实现标量积</p>
-<h2 id="2-2、螺旋数据分类"><a href="#2-2、螺旋数据分类" class="headerlink" title="2.2、螺旋数据分类"></a>2.2、螺旋数据分类</h2><h3 id="1、实验过程"><a href="#1、实验过程" class="headerlink" title="1、实验过程"></a>1、实验过程</h3><p>1、下面代码是下载绘图函数到本地</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001160525943.png" alt="image-20231001160525943"></p>
-<p>2、引入基本的库，然后初始化重要参数</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001160707943.png" alt="image-20231001160707943"></p>
-<p>3、初始化 X 和 Y<br>X 可以理解为特征矩阵，Y可以理解为样本标签。 结合代码可以看到，X的为一个 NxC 行， D 列的矩阵。C 类样本，每类样本是 N个，所以是 N*C 行。每个样本的特征维度是2，所以是 2列。</p>
-<p>在 python 中，调用 zeros 类似的函数，第一个参数是 y方向的，即矩阵的行；第二个参数是 x方向的，即矩阵的列，大家得注意下，不要搞反了。下面结合代码看看 3000个样本的特征是如何初始化的。</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001160755833.png" alt="image-20231001160755833"></p>
-<p>4、打印图像</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001160811859.png" alt="image-20231001160811859"></p>
-<p>5、构建线性模型分类</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001161157473.png" alt="image-20231001161157473"></p>
-<p>6、模型的预测结果<br>使用 print(y_pred.shape) 可以看到模型的预测结果，为[3000, 3]的矩阵。每个样本的预测结果为3个，保存在 y_pred 的一行里。值最大的一个，即为预测该样本属于的类别</p>
-<p>score, predicted &#x3D; torch.max(y_pred, 1) 是沿着第二个方向（即X方向）提取最大值。最大的那个值存在 score 中，所在的位置（即第几列的最大）保存在 predicted 中。下面代码把第10行的情况输出</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001161217071.png" alt="image-20231001161217071"></p>
-<p>7、Plot trained model</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001161239080.png" alt="image-20231001161239080"></p>
-<p>8、构建两层神经网络分类</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001161256574.png" alt="image-20231001161256574"></p>
-<p>9、Plot trained model</p>
-<p><img src="C:\Users\Yee\AppData\Roaming\Typora\typora-user-images\image-20231001161316585.png" alt="image-20231001161316585"></p>
-<p>大家可以看到，在两层神经网络里加入 ReLU 激活函数以后，分类的准确率得到了显著提高。</p>
-<h3 id="2、实验体会"><a href="#2、实验体会" class="headerlink" title="2、实验体会"></a>2、实验体会</h3><blockquote>
-<p>ReLU激活函数（线性整流函数）</p>
-</blockquote>
-<p>通过查询资料<a target="_blank" rel="noopener" href="https://blog.csdn.net/it_flying625/article/details/104073488">ReLU激活函数（线性整流函数）_relu激活函数形式-CSDN博客</a>对ReLU激活函数（线性整流函数）有了初步的了解。</p>
-<p>通过ReLU函数实现了单侧抑制的操作，使得神经网络中的神经元具有了稀疏激活性。通过ReLU实现稀疏后的模型能够更好地挖掘相关特征，拟合训练数据。这也是前后两次打印模型所显示出差别的重要原因。</p>
-<h1 id="三、问题总结"><a href="#三、问题总结" class="headerlink" title="三、问题总结"></a>三、问题总结</h1><blockquote>
-<p>1、激活函数有哪些作用？ </p>
-</blockquote>
-<p>激活函数是用来加入非线性因素的，提高神经网络对模型的表达能力，解决线性模型所不能解决的问题。</p>
-<blockquote>
-<p>2、 梯度消失现象是什么？</p>
-</blockquote>
-<p>梯度消失现象是指在深层神经网络中，反向传播算法中的梯度逐渐变小，并最终趋近于零的现象。这意味着在更新网络权重时，底层神经元的梯度信息几乎无法传递到较浅的层，导致深层网络的训练变得困难。</p>
-<blockquote>
-<p>3、神经网络是更宽好还是更深好？</p>
-</blockquote>
-<p>更宽的神经网络指的是增加每一层神经元的数量，增加网络的宽度。这样可以增加网络的表示能力，使其能够更好地拟合复杂的数据特征。更宽的网络通常具有更多的参数和更高的计算成本，但相对来说训练较为容易。</p>
-<p>更深的神经网络指的是增加网络的层数，增加网络的深度。这样可以引入更多的非线性变换，并且可以构建更复杂的特征表示。深层网络通常可以学习更抽象的特征，并能够在训练集上取得更好的性能。然而，深层网络容易出现梯度消失或梯度爆炸的问题，对训练的要求更高。</p>
-<blockquote>
-<p>4、为什么要使 用Softmax? </p>
-</blockquote>
-<p>加softmax函数是因为它可以将所有类别打分都限制在【0,1】之间，而且所有类别打分和是1，这样就可以将最终输出结果看做是该类别的概率，于是就可以将实际情况与预测情况进行比较来对网络进行调节</p>
-<blockquote>
-<p>5、SGD 和 Adam 哪个更有效？</p>
-</blockquote>
-<p>Adam在训练集上的准确率较高，SGDM在测试集上的准确率较高 Adam的速度更快，但SGDM能够得到好的效果</p>
- 
+<h2 id="1-2-深度学习概述："><a href="#1-2-深度学习概述：" class="headerlink" title="1.2 深度学习概述："></a>1.2 深度学习概述：</h2><p>浅层神经网络，生物神经元到单层感知器，多层感知 器，反向传播和梯度消失。神经网络到深度学习：逐层预训练，自编码器和 受限玻尔兹曼机</p> 
+      <a class="article-more-link" href="/2023/09/28/2023%E7%A7%8B%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A2/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
